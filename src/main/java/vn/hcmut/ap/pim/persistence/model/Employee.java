@@ -39,13 +39,13 @@ public class Employee extends AbstractEntity {
         this.projects = projects;
     }
 
-    @Column(name = "code", nullable = false, length = 3)
+    @Column(nullable = false, length = 3)
     public String getCode() {
         return code;
     }
 
-    public void setCode(String visa) {
-        this.code = visa;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     @Column(name = "first_name", nullable = false)
@@ -67,6 +67,7 @@ public class Employee extends AbstractEntity {
     }
 
     @Column(name = "birth_date")
+    @Temporal(TemporalType.DATE)
     public Date getBirthDate() {
         return birthDate;
     }
@@ -75,7 +76,7 @@ public class Employee extends AbstractEntity {
         this.birthDate = birthday;
     }
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "employees", cascade = { CascadeType.MERGE })
+    @ManyToMany(mappedBy = "employees", cascade = { CascadeType.MERGE })
     @JsonBackReference
     public Set<Project> getProjects() {
         return projects;

@@ -18,7 +18,6 @@ public abstract class AbstractEntity implements Serializable {
     }
 
     @Version
-    @Column(name = "version")
     public int getVersion() {
         return version;
     }

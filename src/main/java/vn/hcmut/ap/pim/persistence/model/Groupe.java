@@ -21,7 +21,6 @@ public class Groupe extends AbstractEntity {
     }
 
     public Groupe(Employee groupLeader, Set<Project> projects) {
-        super();
         this.groupLeader = groupLeader;
         this.projects = projects;
     }
@@ -36,7 +35,7 @@ public class Groupe extends AbstractEntity {
         this.groupLeader = groupLeader;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "group", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "group")
     @JsonBackReference
     public Set<Project> getProjects() {
         return projects;

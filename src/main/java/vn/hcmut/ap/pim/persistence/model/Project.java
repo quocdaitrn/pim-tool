@@ -53,7 +53,6 @@ public class Project extends AbstractEntity {
         this.projectNumber = projectNumber;
     }
 
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -62,7 +61,6 @@ public class Project extends AbstractEntity {
         this.name = name;
     }
 
-    @Column(name = "customer")
     public String getCustomer() {
         return customer;
     }
@@ -71,7 +69,6 @@ public class Project extends AbstractEntity {
         this.customer = customer;
     }
 
-    @Column(name = "status")
     public String getStatus() {
         return status;
     }
@@ -80,7 +77,7 @@ public class Project extends AbstractEntity {
         this.status = status;
     }
 
-    @Column(name = "start_date")
+    @Column(name = "start_Date")
     public Date getStartDate() {
         return startDate;
     }
@@ -89,7 +86,7 @@ public class Project extends AbstractEntity {
         this.startDate = startDate;
     }
 
-    @Column(name = "end_date")
+    @Column(name = "end_Date")
     public Date getEndDate() {
         return endDate;
     }
@@ -98,7 +95,7 @@ public class Project extends AbstractEntity {
         this.endDate = endDate;
     }
 
-    @ManyToMany(cascade = { CascadeType.MERGE }, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = { CascadeType.MERGE })
     @JoinTable(name = "project_employee", joinColumns = {
             @JoinColumn(name = "project_id", referencedColumnName = "project_id") }, inverseJoinColumns = {
                     @JoinColumn(name = "employee_id", referencedColumnName = "employee_id") })
