@@ -29,4 +29,9 @@ public class GroupService implements IGroupService {
     public Groupe save(Groupe groupe) {
         return groupRepository.save(groupe);
     }
+
+    @Override
+    public void delete(Long id) {
+        groupRepository.deleteById(id);
+    }
 }

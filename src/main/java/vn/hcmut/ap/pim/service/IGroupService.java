@@ -10,4 +10,6 @@ public interface IGroupService {
     Groupe findById(Long id);
 
     Groupe save(Groupe groupe);
+
+    void delete(Long id);
 }
